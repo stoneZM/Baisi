@@ -7,18 +7,56 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
+#import "TabBarController.h"
+#import <AFNetworkActivityIndicatorManager.h>
+#import "RecommendNetwork.h"
+#import "SettingViewController.h"
+#import "PushViewController.h"
+#import "EssenceViewController.h"
+@interface AppDelegate () <UIAlertViewDelegate>
 
 @end
 
+
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self networkSetting];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    TabBarController*  tabbar = [TabBarController new];
+    self.window.rootViewController = tabbar;
+
+    [self.window makeKeyAndVisible];
+//    PushViewController* pushVC = [PushViewController standPushVC];
+//    [self.window addSubview:pushVC.view];
+     [RecommendNetwork getMeModuleCompleteHandle:^(id responseObj, NSError *error) {
+
+            }];
     return YES;
 }
+
+-(void)networkSetting{
+
+    //    电池条显示网络活动
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    //    检测网络状态
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        ZMLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                self.onLine = YES;
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+            default:
+                self.onLine = NO;
+                break;
+        }
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -39,7 +77,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
 }
 
 @end

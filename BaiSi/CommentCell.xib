@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CommentCell">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hra-MG-Yn7">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Hox-PI-tCL"/>
+                        <constraint firstAttribute="width" constant="35" id="vd7-VP-vZC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="17.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYr-G4-SdI">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqv-pc-c1Q">
+                    <state key="normal" image="commentLikeButton"/>
+                    <connections>
+                        <action selector="likeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="4V3-wD-Tzq"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_manIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-4E-TBn"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIo-pg-8OY">
+                    <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是一些评论，看看效果这是一些评论，看看效果怎么样这是一些评论，看看效果怎么样这是一些评论，看看效果怎么样怎么样" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSZ-eV-SlJ">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dSZ-eV-SlJ" firstAttribute="leading" secondItem="Jls-4E-TBn" secondAttribute="leading" id="2XX-9K-6Rc"/>
+                <constraint firstItem="HIo-pg-8OY" firstAttribute="leading" secondItem="hra-MG-Yn7" secondAttribute="leading" id="57v-Nd-Wfz"/>
+                <constraint firstItem="Jqv-pc-c1Q" firstAttribute="centerY" secondItem="hra-MG-Yn7" secondAttribute="centerY" id="B4i-Yb-dYg"/>
+                <constraint firstItem="hra-MG-Yn7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="FPH-lZ-yYh"/>
+                <constraint firstAttribute="bottom" secondItem="dSZ-eV-SlJ" secondAttribute="bottom" constant="10" id="RXa-wE-43M"/>
+                <constraint firstItem="hra-MG-Yn7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="SgU-ez-tQX"/>
+                <constraint firstItem="UYr-G4-SdI" firstAttribute="centerY" secondItem="hra-MG-Yn7" secondAttribute="centerY" id="Urw-kd-U04"/>
+                <constraint firstItem="UYr-G4-SdI" firstAttribute="leading" secondItem="Jls-4E-TBn" secondAttribute="trailing" constant="5" id="XJs-ef-AnR"/>
+                <constraint firstAttribute="trailing" secondItem="Jqv-pc-c1Q" secondAttribute="trailing" constant="20" id="XKh-ic-N4I"/>
+                <constraint firstItem="Jls-4E-TBn" firstAttribute="centerY" secondItem="hra-MG-Yn7" secondAttribute="centerY" id="cTV-EL-dN0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dSZ-eV-SlJ" secondAttribute="trailing" constant="20" id="gOv-Bj-bV0"/>
+                <constraint firstItem="Jls-4E-TBn" firstAttribute="leading" secondItem="hra-MG-Yn7" secondAttribute="trailing" constant="10" id="kZw-Rz-1kX"/>
+                <constraint firstItem="HIo-pg-8OY" firstAttribute="top" secondItem="hra-MG-Yn7" secondAttribute="bottom" constant="10" id="lgI-Bi-e1P"/>
+                <constraint firstItem="HIo-pg-8OY" firstAttribute="trailing" secondItem="hra-MG-Yn7" secondAttribute="trailing" id="nk2-F5-h31"/>
+                <constraint firstItem="dSZ-eV-SlJ" firstAttribute="top" secondItem="HIo-pg-8OY" secondAttribute="top" id="wxk-c6-LQU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLb" destination="dSZ-eV-SlJ" id="VFN-Sb-Wrk"/>
+                <outlet property="iconIV" destination="hra-MG-Yn7" id="vWZ-uj-nGG"/>
+                <outlet property="levelLb" destination="HIo-pg-8OY" id="CgK-0f-kcg"/>
+                <outlet property="likeBtn" destination="Jqv-pc-c1Q" id="hug-2m-Nfy"/>
+                <outlet property="screenNameLb" destination="UYr-G4-SdI" id="aIK-Dt-Hna"/>
+                <outlet property="sexIV" destination="Jls-4E-TBn" id="HQ1-cA-9WC"/>
+            </connections>
+            <point key="canvasLocation" x="-80" y="-194"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commentLikeButton" width="18" height="18"/>
+        <image name="defaultUserIcon" width="50" height="50"/>
+        <image name="profile_manIcon" width="13" height="13"/>
+    </resources>
+</document>

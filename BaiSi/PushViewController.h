@@ -1,0 +1,15 @@
+//
+//  PushViewController.h
+//  BaiSi
+//
+//  Created by stone on 16/9/9.
+//  Copyright © 2016年 zm. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface PushViewController : UIViewController
+
++(instancetype)standPushVC;
+
+@end
